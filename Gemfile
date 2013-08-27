@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
 
+gem "twitter-bootstrap-rails"
+gem "jquery-ui-rails"
+gem "designmodo-flatuipro-rails"
+
 group :development do
   gem 'sqlite3', '1.3.7'
 end
