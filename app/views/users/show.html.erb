@@ -26,7 +26,28 @@
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %> |
 <%= link_to 'Back', users_path %>
 
-<%= text_area "post", "body", "cols" => 20, "rows" => 40 %>
+<%= form_for(@status) do |f| %>
+<div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </div>
+<div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+<div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+Display all messages <br />
+<% if !@user.statuses.blank? %>
+  <% for item in @user.statuses %>
+   <%= item.content %> <br />
+   <%= item.created_at %> <br />
+  <% end %>
+   
+<% else %>
+<% end %>
