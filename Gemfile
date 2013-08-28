@@ -7,6 +7,8 @@ gem "twitter-bootstrap-rails"
 gem "jquery-ui-rails"
 gem "designmodo-flatuipro-rails"
 
+gem 'paperclip'
+
 group :development do
   gem 'sqlite3', '1.3.7'
 end
