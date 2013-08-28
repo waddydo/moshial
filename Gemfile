@@ -7,7 +7,8 @@ gem "twitter-bootstrap-rails"
 gem "jquery-ui-rails"
 gem "designmodo-flatuipro-rails"
 
-gem 'paperclip'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "protected_attributes"
 
 group :development do
   gem 'sqlite3', '1.3.7'
@@ -27,4 +28,5 @@ end
 group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
+  gem "rmagick", :require => 'RMagick'
 end
