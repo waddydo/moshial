@@ -10,11 +10,13 @@ class StatusesController < ApplicationController
   # GET /statuses/1
   # GET /statuses/1.json
   def show
+    @uid = params[:uid]
   end
 
   # GET /statuses/new
   def new
     @status = Status.new
+    @uid = params[:uid]
   end
 
   # GET /statuses/1/edit
@@ -29,7 +31,7 @@ class StatusesController < ApplicationController
     respond_to do |format|
       if @status.save
         format.html { redirect_to @status, notice: 'Status was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @status }
+        format.json { render action: 'show', status: :created, location: @status}
       else
         format.html { render action: 'new' }
         format.json { render json: @status.errors, status: :unprocessable_entity }
